@@ -118,7 +118,7 @@ const deleteStudent = asynchandler(async(req, res) => {
         return res.json(400).json({ message: "Incorrect password." })
     }
 
-    const mails = await Mail.deleteMany({ sender: student[0]._id })
+    const mails = await Mail.deleteMany({ senderName: student[0]._id })
 
     const result = await student[0].deleteOne()
 
